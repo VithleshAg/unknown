@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css" />
+    <title>Document</title>
+  </head>
+  <body style="overflow-x: hidden;">
+    <nav
+      class="navbar navbar-expand navbar-dark bg-dark flex-column flex-md-row bd-navbar"
+    >
+      <h3 style="color: white;">Admin</h3>
+      <div class="navbar-nav-scroll" style="margin-left: 5%;">
+        <ul class="navbar-nav bd-navbar-nav flex-row">
+          <li class="nav-item" style="padding : 3%">
+            <a class="nav-link " href="/writer/dashboard"><h5>Home</h5></a>
+          </li>
+          <li class="nav-item" style="padding : 3%">
+            <a class="nav-link" href="/category/register"
+              ><h5>Add Category</h5></a
+            >
+          </li>
+          <li class="nav-item" style="padding : 3%">
+            <a class="nav-link" href="/category/all"><h5>All Category</h5></a>
+          </li>
+          <li class="nav-item" style="padding : 3%">
+            <a class="nav-link" href="/writer/all"><h5>Writers</h5></a>
+          </li>
+          <li class="nav-item" style="padding : 3%">
+            <a class="nav-link" href="/"><h5>Link6</h5></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="row">
+      <div class="col">
+        <div class="container">
+          <div class="card mt-3">
+            <div class="card-header">
+              <b>Register Category</b>
+            </div>
+            <form action="/category/submit" method="POST">
+              <div class="card-body">
+                <div class="form-group">
+                  <label for="formGroupExampleInput">Write Category Name</label>
+                  <input
+                    required
+                    class="form-control"
+                    type="text"
+                    name="catName"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="submit"
+                    style="width : 100%"
+                    class="btn btn-primary"
+                  />
+                </div>
+                <h5 style="color :red"><%=message%></h5>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="/javascripts/jquery.js"></script>
+  <script src="/javascripts/bootstrap.js"></script>
+  <script src="/javascripts/popper.js"></script>
+</html>

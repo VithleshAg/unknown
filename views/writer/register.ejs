@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css" />
+  </head>
+  <body style="overflow-x: hidden;">
+    <div class="row">
+      <div class="col">
+        <div class="container">
+          <div class="card mt-3">
+            <div class="card-header">
+              <b>Regsitration</b>
+            </div>
+            <form
+              id="myform"
+              action="/writer/submit"
+              method="post"
+              enctype="multipart/form-data"
+            >
+              <div class="card-body register">
+                <p class="card-text"><b>Please fill your details here</b></p>
+                <div class="form-group">
+                  <label for="formGroupExampleInput">Writer Name </label>
+
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="name"
+                    id=""
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="formGroupExampleInput">Email</label>
+                  <input
+                    required
+                    class="form-control"
+                    type="email"
+                    name="email"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="formGroupExampleInput">Password</label>
+                  <input
+                    required
+                    type="password"
+                    class="form-control"
+                    name="password"
+                    id="password"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="formGroupExampleInput">Confirm Password : </label>
+                  <input
+                    required
+                    type="password"
+                    class="form-control"
+                    name=""
+                    id="confirm_password"
+                  />
+                  <div id="message"></div>
+                </div>
+                <div class="form-group">
+                  <label for="formGroupExampleInput">Choose file </label>
+                  <div class="custom-file">
+                    <input
+                      type="file"
+                      name="pic"
+                      class="custom-file-input"
+                      id="inputGroupFile02"
+                    />
+                    <label
+                      class="custom-file-label"
+                      for="inputGroupFile02"
+                      aria-describedby="inputGroupFileAddon02"
+                      >Choose file</label
+                    >
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <input
+                    type="submit"
+                    style="width : 100%"
+                    class="btn btn-primary"
+                  />
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="container">
+          <div class="card mt-3">
+            <div class="card-header">
+              <b>Writer Login</b>
+            </div>
+            <form action="/writer/checkLogin" method="POST">
+              <div class="card-body">
+                <div class="form-group">
+                  <label for="formGroupExampleInput">Email </label>
+                  <input
+                    required
+                    class="form-control"
+                    type="email"
+                    name="email"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="formGroupExampleInput">Password</label>
+                  <input
+                    required
+                    class="form-control"
+                    type="password"
+                    name="password"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="submit"
+                    style="width : 100%"
+                    class="btn btn-primary"
+                  />
+                </div>
+                <h5 style="color :red"><%=message%></h5>
+              </div>
+
+              <h5 style="color : red"></h5>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="/javascripts/jquery.js"></script>
+  <script src="/javascripts/bootstrap.js"></script>
+  <script src="/javascripts/popper.js"></script>
+  <script src="/javascripts/writer_register.js"></script>
+</html>

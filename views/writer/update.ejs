@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css" />
+  </head>
+  <body style="overflow-x: hidden;">
+    <nav
+      class="navbar navbar-expand navbar-dark bg-dark flex-column flex-md-row bd-navbar"
+    >
+      <h3 style="color: white;"><%=data.name%></h3>
+      <div class="navbar-nav-scroll" style="margin-left: 5%;">
+        <ul class="navbar-nav bd-navbar-nav flex-row">
+          <li class="nav-item" style="padding : 3%">
+            <a class="nav-link" href="/writer/dashboard"><h5>Home</h5></a>
+          </li>
+          <li class="nav-item" style="padding : 3%">
+              <a class="nav-link" href="/posts/all"><h5>All Posts</h5></a>
+            </li>
+          <li class="nav-item" style="padding : 3%">
+            <a class="nav-link active" href="/writer/update/<%=data._id%>"
+              ><h5>Profile</h5></a
+            >
+          </li>
+          <li class="nav-item" style="padding : 3%">
+            <a class="nav-link" href="/"><h5>Link3</h5></a>
+          </li>
+          <li class="nav-item" style="padding : 3%">
+            <a class="nav-link" href="/"><h5>Link4</h5></a>
+          </li>
+          <li class="nav-item" style="padding : 3%">
+            <a class="nav-link" href="/"><h5>Link5</h5></a>
+          </li>
+          <li class="nav-item" style="padding : 3%">
+            <a class="nav-link" href="/"><h5>Link6</h5></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="row">
+      <div class="col">
+        <div class="container">
+          <div class="card mt-3">
+            <div class="card-header">
+              <b>Update Your Details</b>
+            </div>
+            <form id="myform" action="/writer/update_submit" method="post">
+              <div class="card-body">
+                <p class="card-text"><b>Please fill your details here</b></p>
+                <div class="form-group">
+                  <label for="formGroupExampleInput">Writer Name </label>
+
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="name"
+                    id=""
+                    value="<%=data.name %>"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="formGroupExampleInput">Email</label>
+                  <input
+                    required
+                    class="form-control"
+                    type="email"
+                    name="email"
+                    value="<%=data.email%>"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="formGroupExampleInput">Password</label>
+                  <input
+                    required
+                    type="password"
+                    class="form-control"
+                    name="password"
+                    id="password"
+                    value="<%=data.password%>"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <input type="text" name="id" value="<%=data._id %>" hidden />
+                  <label for="formGroupExampleInput">Confirm Password : </label>
+                  <input
+                    required
+                    type="password"
+                    class="form-control"
+                    name=""
+                    id="confirm_password"
+                  />
+                  <div id="message"></div>
+                </div>
+                
+
+                <div class="form-group">
+                  <input
+                    type="submit"
+                    value="update"
+                    style="width : 100%"
+                    class="btn btn-primary"
+                  />
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <form action="/writer/update_image" method="post" enctype="multipart/form-data">
+          <div class="container">
+            <div class="card mt-3">
+              <div class="card-header">
+                <b>Profile Picture</b>
+              </div>
+              <div class="card-body">
+                <input type="text" name="id" value="<%=data._id %>" hidden />
+                <img
+                  src="/images/<%=data.pic%>"
+                  width="100%"
+                  ,
+                  height="350px"
+                  alt=""
+                />
+                
+                 <div class="custom-file" style= 'margin-top: 4%;'>
+                    <input
+                      type="file"
+                      name="pic"
+                      class="custom-file-input"
+                      id="inputGroupFile02"
+                    />
+                    <label
+                      class="custom-file-label"
+                      for="inputGroupFile02"
+                      aria-describedby="inputGroupFileAddon02"
+                      >Choose file</label
+                    >
+                  </div>
+                  <div class="form-group" style= 'margin-top: 4%;'>
+                    <input
+                        type="submit"
+                        value="Update Profile Picture "
+                        style="width : 100%"
+                        class="btn btn-primary"
+                    />
+                 </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+  <script src="/javascripts/jquery.js"></script>
+  <script src="/javascripts/bootstrap.js"></script>
+  <script src="/javascripts/popper.js"></script>
+  <script src="/javascripts/writer_register.js"></script>
+</html>
